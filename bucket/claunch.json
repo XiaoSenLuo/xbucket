@@ -1,0 +1,54 @@
+{
+    "version": "4.06",
+    "description": "Program launcher \"CLaunch\"",
+    "homepage": "https://hp.vector.co.jp/authors/VA018351/en/claunch.html",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://ss1.xrea.com/pyonkichi.g1.xrea.com/archives/cl64_406.zip",
+            "hash": "aba7900f526e10639b867983794c59c23347b31b17ad40cdf49dc11f096dd71f"
+        },
+        "32bit": {
+            "url": "https://ss1.xrea.com/pyonkichi.g1.xrea.com/archives/cl406.zip",
+            "hash": "2d2814c4bb1b55e07b11eb42c192ed65876bb46e503c110059d93b1e783d5ae6"
+        }
+    },
+    "bin": [
+        "CLaunch.exe"
+    ],
+    "shortcuts": [
+        [
+            "CLaunch.exe",
+            "CLaunch"
+        ]
+    ],
+    "env_set": {
+    },
+	"pre_install": [
+        "if (!(Test-Path \"$persist_dir\\Data\")) {",
+        "   New-Item \"$dir\\Data\" -ItemType Directory | Out-Null",
+        "   New-Item \"$dir\\Skins\" -ItemType Directory | Out-Null",
+        "}"
+    ],
+    "post_install": [
+    ],
+    "persist": [
+        "Data",
+        "Skins"
+    ],
+    "checkver": {
+        "url": "view-source:https://hp.vector.co.jp/authors/VA018351/en/claunch.html",
+        "regex": "CLaunch Ver. (?<mver>[\\d]+).(?<sver>[\\d]+)",
+        "replace": "${mver}${sver}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://ss1.xrea.com/pyonkichi.g1.xrea.com/archives/cl64_$version.zip"
+            },
+            "32bit": {
+                "url": "https://ss1.xrea.com/pyonkichi.g1.xrea.com/archives/cl$version.zip"
+            }
+        }
+    }
+}
