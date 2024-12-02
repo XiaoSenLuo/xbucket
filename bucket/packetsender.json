@@ -1,0 +1,31 @@
+{
+    "version": "8.8.9",
+    "description": "Packet Sender is an open source utility to allow sending and receiving TCP, UDP, and SSL (encrypted TCP) packets as well as HTTP/HTTPS requests and panel generation",
+    "homepage": "https://github.com/dannagle/PacketSender",
+    "license": "GPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/dannagle/PacketSender/releases/download/v8.8.9/PacketSenderPortable_v8.8.9.zip",
+            "hash": "57495dcd82e74b2de05d9b60e04d66782d5ff18584d8e789f3d1a5a8b90cc484"
+        }
+    },
+    "extract_dir": "PacketSenderPortable",
+    "bin": "packetsender.exe",
+    "shortcuts": [
+        [
+            "packetsender.exe",
+            "packetsender"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/dannagle/PacketSender"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/dannagle/PacketSender/releases/download/v$version/PacketSenderPortable_v$version.zip"
+            }
+        },
+        "extract_dir": "packetsender"
+    }
+}
