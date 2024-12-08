@@ -1,0 +1,25 @@
+{
+    "version": "0.0-3862-g936dfb1d",
+    "description": "The Verible project's main mission is to parse SystemVerilog (IEEE 1800-2017) (as standardized in the SV-LRM) for a wide variety of applications, including developer tools.",
+    "homepage": "https://github.com/chipsalliance/verible",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/chipsalliance/verible/releases/download/v0.0-3862-g936dfb1d/verible-v0.0-3862-g936dfb1d-win64.zip",
+            "hash": "0a5d8d8259664f8b848e4005d41b5606e8c3bcb6bf0e20f777ba76625fc47cfa",
+			"extract_dir": "verible-v0.0-3862-g936dfb1d-win64",
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/chipsalliance/verible"
+    },
+	"env_add_path": ".",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/chipsalliance/verible/releases/download/v$matchHead$matchTail/verible-v$matchHead$matchTail-win64.zip"
+            }
+        },
+        "extract_dir": "verible-v$matchHead$matchTail-win64"
+    }
+}
