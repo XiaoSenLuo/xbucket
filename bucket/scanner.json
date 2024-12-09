@@ -1,0 +1,29 @@
+{
+    "version": "2.13",
+    "description": "This tool uses a sunburst chart to display the usage of your hard disk or other media. The chart shows all major files and folders from all directory levels at once.",
+    "homepage": "http://www.steffengerlach.de/freeware/index.html",
+    "license": "freeware",
+    "architecture": {
+        "64bit": {
+            "url": "http://www.steffengerlach.de/freeware/scn2.zip",
+            "hash": "c691fc6f68feb62be2ef76622d2be4e4334021f84f942d0e236ea9ecd5f81487"
+        }
+    },
+    "bin": "Scanner.exe",
+    "shortcuts": [
+        [
+            "Scanner.exe",
+            "Scanner"
+        ]
+    ],
+    "checkver": {
+        "url": "http://www.steffengerlach.de/freeware/index.html"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://www.steffengerlach.de/freeware/scn2.zip"
+            }
+        }
+    }
+}
