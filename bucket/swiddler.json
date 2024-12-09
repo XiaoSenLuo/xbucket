@@ -1,0 +1,30 @@
+{
+    "version": "1.0.6",
+    "description": "TCP/UDP debugging tool",
+    "homepage": "https://github.com/jlucansky/Swiddler",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/jlucansky/Swiddler/releases/download/v1.0.6/Swiddler.zip",
+            "hash": "7c60e436f4484662715875876f44a211124f4eaa8747afee0e3112b150b10805"
+        }
+    },
+    "bin": "Swiddler.exe",
+    "shortcuts": [
+        [
+            "Swiddler.exe",
+            "Swiddler"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/jlucansky/Swiddler"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/jlucansky/Swiddler/releases/download/v$version/Swiddler.zip"
+            }
+        },
+        "extract_dir": "comtool"
+    }
+}
