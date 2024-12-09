@@ -6,14 +6,14 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/ghdl/ghdl/releases/download/v4.1.0/ghdl-UCRT64.zip",
-            "hash": "",
+            "hash": "c404ac59d598b9c067dd54e0e753d2d363c30cf93f929fcf82575b9620a23aef",
 			"extract_dir": "GHDL",
         }
     },
     "checkver": {
         "github": "https://github.com/ghdl/ghdl"
     },
-	"env_add_path": ".",
+	"env_add_path": ".\\bin",
     "autoupdate": {
         "architecture": {
             "64bit": {
