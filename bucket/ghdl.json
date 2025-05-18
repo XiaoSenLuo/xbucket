@@ -1,13 +1,12 @@
 {
-    "version": "4.1.0",
+    "version": "5.0.1",
     "description": "GHDL, the open-source analyzer, compiler, simulator and (experimental) synthesizer for VHDL, a Hardware Description Language (HDL).",
     "homepage": "https://github.com/ghdl/ghdl",
     "license": "GPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ghdl/ghdl/releases/download/v4.1.0/ghdl-UCRT64.zip",
-            "hash": "c404ac59d598b9c067dd54e0e753d2d363c30cf93f929fcf82575b9620a23aef",
-			"extract_dir": "GHDL",
+            "url": "https://github.com/ghdl/ghdl/releases/download/v5.0.1/ghdl-mcode-5.0.1-ucrt64.zip",
+            "hash": "1b5f203dd498a2c17715e832762b849c3230878c80258430436e76a48123e793",
         }
     },
     "checkver": {
@@ -17,9 +16,8 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/ghdl/ghdl/releases/download/v$version/ghdl-UCRT64.zip"
+                "url": "https://github.com/ghdl/ghdl/releases/download/v$version/ghdl-mcode-$version-ucrt64.zip"
             }
-        },
-        "extract_dir": "GHDL"
+        }
     }
 }
