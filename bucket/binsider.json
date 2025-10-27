@@ -1,0 +1,32 @@
+{
+    "version": "0.2.1",
+    "description": "Binsider can perform static and dynamic analysis, inspect strings, examine linked libraries, and perform hexdumps, all within a user-friendly terminal user interface!",
+    "homepage": "https://github.com/orhun/binsider",
+    "license": "Apache-2.0, MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/orhun/binsider/releases/download/v0.2.1/binsider--x86_64-pc-windows-msvc.zip",
+            "hash": ""
+        }
+    },
+    "extract_dir": "binsider-",
+    "bin": "binsider.exe",
+    "shortcuts": [
+        [
+            "binsider.exe",
+            "binsider"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/orhun/binsider"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/orhun/binsider/releases/download/v$version/binsider--x86_64-pc-windows-msvc.zip
+"
+            }
+        },
+        "extract_dir": "binsider-"
+    }
+}
