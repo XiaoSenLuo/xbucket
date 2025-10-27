@@ -11,12 +11,6 @@
     },
     "extract_dir": "binsider-",
     "bin": "binsider.exe",
-    "shortcuts": [
-        [
-            "binsider.exe",
-            "binsider"
-        ]
-    ],
     "checkver": {
         "github": "https://github.com/orhun/binsider"
     },
