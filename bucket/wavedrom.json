@@ -1,0 +1,31 @@
+{
+    "version": "3.5.0",
+    "description": "WaveDromEditor is real-time editor of digital timing diagrams based on WaveDrom engine and WaveJSON format.",
+    "homepage": "https://github.com/wavedrom/wavedrom.github.io",
+    "license": "LGPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wavedrom/wavedrom.github.io/releases/download/v3.5.0/wavedrom-editor-v3.5.0-win-x64.zip",
+            "hash": ""
+        }
+    },
+    "extract_dir": "wavedrom-editor-v3.5.0-win-x64",
+    "bin": "wavedrom-editor.exe",
+    "shortcuts": [
+        [
+            "wavedrom-editor.exe",
+            "WaveDrom-Editor"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/wavedrom/wavedrom.github.io"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wavedrom/wavedrom.github.io/releases/download/v$version/wavedrom-editor-v$version-win-x64.zip"
+            }
+        },
+        "extract_dir": "comtool"
+    }
+}
