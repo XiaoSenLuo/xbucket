@@ -1,0 +1,17 @@
+{
+    "version": "0.34",
+    "description": "a tool to analyze .MAP files produced by 32/64-bit Visual Studio compiler and report the amount of memory being used by data and code. This app can also read and analyze MAP files produced by the GCC, Xbox360, Wii, PS3 (gcc and SNC), and PS4 compilers.",
+    "homepage": "https://www.sikorskiy.net/info/prj/amap/",
+    "license": "freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.sikorskiy.net/info/prj/amap/files/amap.34.win64.zip",
+            "hash": "f6ed4c39ae6639278d0e921d63f319931086bf51646c0107afb55c26693fef16"
+        },
+        "32bit": {
+            "url": "https://www.sikorskiy.net/info/prj/amap/files/amap.30.win32.zip",
+            "hash": "022e006757f5f89ac46569f4018519158e39ceb9d731e3ae1ac07db8ba493679"
+        }
+    },
+    "bin": "amap.exe"
+}
