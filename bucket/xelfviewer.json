@@ -1,0 +1,38 @@
+{
+    "version": "0.05",
+    "description": "ELF file viewer/editor for Windows, Linux and MacOS.",
+    "homepage": "https://github.com/horsicq/XELFViewer",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/horsicq/XELFViewer/releases/download/0.05/xelfviewer_win64_portable_0.05.zip",
+            "pre_install": [
+                "if (!(Test-Path \"$persist_dir\\xelfviewer.ini\")) { New-Item \"$dir\\xelfviewer.ini\" -ItemType File | Out-Null }",
+                "if (!(Test-Path \"$persist_dir\\shortcuts.ini\")) { New-Item \"$dir\\shortcuts.ini\" -ItemType File | Out-Null }"
+
+            ],
+            "hash": "9689f37b881d185177f10503368b5d0324ca06ea51204d3a27cf586de8c976fd"
+        }
+    },
+    "bin": "xelfviewer.exe",
+    "shortcuts": [
+        [
+            "xelfviewer.exe",
+            "XELFViewer"
+        ]
+    ],
+    "persist": [
+        "xelfviewer.ini",
+        "shortcuts.ini"
+    ],
+    "checkver": {
+        "github": "https://github.com/horsicq/XELFViewer"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/horsicq/XELFViewer/releases/download/$version/xelfviewer_win64_portable_$version.zip"
+            }
+        }
+    }
+}
