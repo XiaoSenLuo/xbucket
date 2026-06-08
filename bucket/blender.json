@@ -1,0 +1,62 @@
+{
+    "version": "4.5.10",
+    "description": "3D creation suite",
+    "homepage": "https://www.blender.org",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.blender.org/release/Blender4.5/blender-4.5.10-windows-x64.zip",
+            "hash": "ef6d846b8015f47ade6df3f9322ce17419080a5d922fa562b6c966064fe30dce",
+            "extract_dir": "blender-4.5.10-windows-x64"
+        },
+        "arm64": {
+            "url": "https://download.blender.org/release/Blender4.5/blender-4.5.10-windows-arm64.zip",
+            "hash": "893f57312c1bfad9949acfafa46fbc84786bf3842189a7d6e5d20a5aa9e6680c",
+            "extract_dir": "blender-4.5.10-windows-arm64"
+        }
+    },
+    "bin": "blender-launcher.exe",
+    "shortcuts": [
+        [
+            "blender-launcher.exe",
+            "Blender"
+        ]
+    ],
+    "persist": "portable",
+    "checkver": {
+        "url": "https://download.blender.org/release/",
+        "script": [
+            "try {",
+            "    $baseVersion = [regex]::Matches($page, 'href=\"Blender(?<version>\\d+\\.\\d+)/\"') | ForEach-Object {",
+            "        [version]\"$($_.Groups['version'].Value)\"",
+            "    } | Sort-Object -Descending | Select-Object -First 1",
+            "    if (-not $baseVersion) { throw 'No base version found' }",
+            "    $latestVersion = (Invoke-WebRequest -Uri \"https://download.blender.org/release/Blender$($baseVersion.Major).$($baseVersion.Minor)/\" -UseBasicParsing).Links | ForEach-Object {",
+            "        if ($_.href -match '^blender-(?<version>\\d+\\.\\d+\\.\\d+)-windows-x64\\.zip$') {",
+            "            [version]$Matches['version']",
+            "        }",
+            "    } | Sort-Object -Descending | Select-Object -First 1",
+            "    Write-Output $latestVersion",
+            "}",
+            "catch {",
+            "    Write-Output ''",
+            "}"
+        ],
+        "regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.blender.org/release/Blender$majorVersion.$minorVersion/blender-$version-windows-x64.zip",
+                "extract_dir": "blender-$version-windows-x64"
+            },
+            "arm64": {
+                "url": "https://download.blender.org/release/Blender$majorVersion.$minorVersion/blender-$version-windows-arm64.zip",
+                "extract_dir": "blender-$version-windows-arm64"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/blender-$version.sha256"
+        }
+    }
+}
