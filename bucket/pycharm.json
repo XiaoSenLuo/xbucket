@@ -14,23 +14,7 @@
     "architecture": {
         "64bit": {
             "url": "https://download.jetbrains.com/python/pycharm-2025.3.6.1.win.zip",
-            "hash": "ca5ffa0793253e1001e322a796fa60dfc25364e291987dd0dc86d2efb07d8259",
-            "bin": [
-                [
-                    "IDE\\bin\\pycharm64.exe",
-                    "pycharm"
-                ]
-            ],
-            "shortcuts": [
-                [
-                    "IDE\\bin\\pycharm64.exe",
-                    "JetBrains\\PyCharm"
-                ]
-            ]
-        },
-        "arm64": {
-            "url": "https://download.jetbrains.com/python/pycharm-2025.3.4-aarch64.win.zip",
-            "hash": "49918c54f55523b47d2d5044b6226a07f71fc2d59e8b64b2e108fa700c4319a2",
+            "hash": "675d8a9df0b48f4444fc23d68fb9a1fb83c58c339be0743b805f9c91d4d07d45",
             "bin": [
                 [
                     "IDE\\bin\\pycharm64.exe",
@@ -64,9 +48,6 @@
         "architecture": {
             "64bit": {
                 "url": "https://download.jetbrains.com/python/pycharm-$matchVer.win.zip"
-            },
-            "arm64": {
-                "url": "https://download.jetbrains.com/python/pycharm-$matchVer-aarch64.win.zip"
             }
         },
         "hash": {
