@@ -1,0 +1,23 @@
+{
+    "version": "0.1.11",
+    "description": "Desktop automation CLI for AI agents. Screenshot, click, type, scroll, and drag. Native Zig backend, no Node.js runtime required.",
+    "homepage": "https://github.com/remorses/usecomputer",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/remorses/usecomputer/releases/download/v0.1.11/usecomputer-v0.1.11-win32-x64.zip",
+            "hash": "d98c2353de2556fc393f0893e29f25d9caa0e36d8d90d651422a7f7e82da658d"
+        }
+    },
+    "bin": "usecomputer.exe",
+    "checkver": {
+        "github": "https://github.com/remorses/usecomputer"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/remorses/usecomputer/releases/download/v$version/usecomputer-v$version-win32-x64.zip"
+            }
+        }
+    }
+}
