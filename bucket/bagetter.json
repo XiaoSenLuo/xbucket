@@ -1,0 +1,50 @@
+{
+    "version": "1.6.5",
+    "description": "BaGetter is a lightweight NuGet and symbol server.",
+    "homepage": "https://github.com/bagetter/BaGetter",
+    "license": "MIT",
+    "suggest": {
+        ".NET SDK (required at runtime)": "dotnet-sdk"
+    },
+    "notes": [
+        "BaGetter requires the .NET SDK to run. If not yet installed:",
+        "  scoop install dotnet-sdk",
+        "Start the server with 'bagetter' (default: http://localhost:5000, override with 'bagetter --urls http://*:8080').",
+        "Configuration and data are kept in the persist directory ($env:SCOOP\\persist\\bagetter):",
+        "  appsettings.json            base config (edit this one)",
+        "  appsettings.Production.json database and package storage overrides",
+        "  bagetter.db, packages/      server data"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/bagetter/BaGetter/releases/download/v1.6.5/BaGetter-1.6.5.zip",
+            "hash": "bae79da37a25524034f2d446089123e80e4470cae12018b5c911f4a8fc14b153"
+        }
+    },
+    "pre_install": [
+        "$wrapper = @('@set \"ASPNETCORE_CONTENTROOT=%~dp0\"', '@dotnet \"%~dp0BaGetter.dll\" %*')",
+        "Set-Content \"$dir\\bagetter.cmd\" ($wrapper -join \"`r`n\")",
+        "$persist = persistdir $app $global",
+        "$json = @{ Database = @{ ConnectionString = \"Data Source=$($persist -replace '\\\\','/')/bagetter.db\" }; Storage = @{ Path = \"$($persist -replace '\\\\','/')/packages\" } } | ConvertTo-Json -Depth 5",
+        "Set-Content \"$dir\\appsettings.Production.json\" $json"
+    ],
+    "persist": [
+        "appsettings.json",
+        "appsettings.Production.json",
+        "packages"
+    ],
+    "bin": "bagetter.cmd",
+    "post_install": [
+        "if (!(Get-Command dotnet -ErrorAction SilentlyContinue)) { warn \"'dotnet' not found! Install it with 'scoop install dotnet-sdk' before running 'bagetter'.\" }"
+    ],
+    "checkver": {
+        "github": "https://github.com/bagetter/BaGetter"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/bagetter/BaGetter/releases/download/v$version/BaGetter-$version.zip"
+            }
+        }
+    }
+}
