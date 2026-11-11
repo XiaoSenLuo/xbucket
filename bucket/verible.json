@@ -7,13 +7,13 @@
         "64bit": {
             "url": "https://github.com/chipsalliance/verible/releases/download/v0.0-3992-g1903b809/verible-v0.0-3992-g1903b809-win64.zip",
             "hash": "d6868f98c6fff21a452ef80123ea8b79a19c37bb807c33c951b57ddafb39e44d",
-			"extract_dir": "verible-v0.0-3992-g1903b809-win64",
+            "extract_dir": "verible-v0.0-3992-g1903b809-win64"
         }
     },
     "checkver": {
         "github": "https://github.com/chipsalliance/verible"
     },
-	"env_add_path": ".",
+    "env_add_path": ".",
     "autoupdate": {
         "architecture": {
             "64bit": {

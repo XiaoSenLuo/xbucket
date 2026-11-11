@@ -22,9 +22,7 @@
         "CMSIS_COMPILER_ROOT": "$dir\\etc",
         "CMSIS_PACK_ROOT": "$env:LOCALAPPDATA\\Arm\\Packs"
     },
-	"pre_install": [
-    ],
-    "persist": "",
+        "persist": "",
     "checkver": {
         "github": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox"
     },

@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Neutree/COMTool/releases/download/v3.4.1/comtool_windows_v3.4.1.7z",
-            "hash": ""
+            "hash": "fb6fe9b2c28a7596cc125ad6309b626823c0093e58d1194e34871b1fe2a17f30"
         }
     },
     "extract_dir": "comtool",

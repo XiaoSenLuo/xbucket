@@ -12,7 +12,7 @@
     "checkver": {
         "github": "https://github.com/ghdl/ghdl"
     },
-	"env_add_path": ".\\bin",
+    "env_add_path": ".\\bin",
     "autoupdate": {
         "architecture": {
             "64bit": {

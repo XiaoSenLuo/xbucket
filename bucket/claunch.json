@@ -24,15 +24,13 @@
     ],
     "env_set": {
     },
-	"pre_install": [
+    "pre_install": [
         "if (!(Test-Path \"$persist_dir\\Data\")) {",
         "   New-Item \"$dir\\Data\" -ItemType Directory | Out-Null",
         "   New-Item \"$dir\\Skins\" -ItemType Directory | Out-Null",
         "}"
     ],
-    "post_install": [
-    ],
-    "persist": [
+        "persist": [
         "Data",
         "Skins"
     ],
