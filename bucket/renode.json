@@ -1,0 +1,56 @@
+{
+    "version": "1.17.1",
+    "description": "Renode - Antmicro's open source simulation and virtual development framework for complex embedded systems.",
+    "homepage": "https://github.com/renode/renode",
+    "license": "MIT",
+    "suggest": {
+        "Python 3 (for Robot Framework testing with renode-test)": "python"
+    },
+    "notes": [
+        "Installing dependencies:",
+        "Renode requires .NET (dotnet) >= 10.0. This package is the portable build with the .NET runtime bundled, so dotnet need not be installed separately.",
+        "The other dependencies listed in the README are for Linux only.",
+        "Additional prerequisites:",
+        "Robot Framework testing: to write and run test cases, Renode integrates with the Robot testing framework. This requires Python 3 with pip ('scoop install python').",
+        "Once you have Python 3 and pip, install the additional modules:",
+        "python -m pip install -r \"$dir\\tests\\requirements.txt\"",
+        "Other tools: each of the tools in the 'tools' subdirectory may contain a 'requirements.txt' file separate from Renode's requirements.",
+        "Install them in your virtual environment with 'pip install -r requirements.txt'."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/renode/renode/releases/download/v1.17.1/renode-1.17.1.windows-portable.zip",
+            "hash": "226e7f984e9532847733ef3befe11063a225991e6ad7e7c1423d1f59edf2e744",
+            "extract_dir": "renode_1.17.1-portable"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\renode.config\") -and !(Test-Path \"$dir\\renode.config\")) { New-Item \"$dir\\renode.config\" -ItemType File | Out-Null }"
+    ],
+    "post_install": [
+        "$persist = persistdir $app $global",
+        "$renodehistory = \"$dir\\history\"",
+        "$renodeconf = \"$persist\\renode.config\"",
+        "if (!(Test-Path $renodeconf) -or (Get-Item $renodeconf).Length -eq 0) { [IO.File]::WriteAllText($renodeconf, \"[general]`r`nhistory-path = $renodehistory`r`n\") }"
+    ],
+    "persist": [
+        "renode.config",
+        "history"
+        
+    ],
+    "bin": [
+        "renode.exe",
+        "renode-test.bat"
+    ],
+    "checkver": {
+        "github": "https://github.com/renode/renode"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/renode/renode/releases/download/v$version/renode-$version.windows-portable.zip"
+            }
+        },
+        "extract_dir": "renode_$version-portable"
+    }
+}
