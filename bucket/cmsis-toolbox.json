@@ -1,12 +1,12 @@
 {
-    "version": "2.12.0",
+    "version": "2.16.0",
     "description": "The executable tools of the CMSIS-Toolbox that provides a set of command-line tools to work with software packs in Open-CMSIS-Pack format.",
     "homepage": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/download/2.12.0/cmsis-toolbox-windows-amd64.zip",
-            "hash": "07093299c702243a092966c28290af16cfc4d92ee15c288218cd052946fdb42c",
+            "url": "https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/download/2.16.0/cmsis-toolbox-windows-amd64.zip",
+            "hash": "f51a53d4451e5fa66fd1c5835249db1d728cbe4cc2c066e3807953285bd49d02",
             "extract_dir": "cmsis-toolbox-windows-amd64"
         }
     },
