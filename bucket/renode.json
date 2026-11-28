@@ -36,7 +36,6 @@
     "persist": [
         "renode.config",
         "history"
-        
     ],
     "bin": [
         "renode.exe",
