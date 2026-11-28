@@ -1,0 +1,42 @@
+{
+    "version": "26.10",
+    "description": "SoftPerfect TFTP Server is a standards-compliant TFTP server implementing the full RFC 1350 specification with modern extensions for improved performance",
+    "homepage": "https://www.softperfect.com/products/toolkit/tftpserver/",
+    "license": "freesoftware",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.softperfect.com/download/freeware/tftpserver_windows_portable.zip",
+            "hash": "fe1de3879ef1258f7042102f430becbec4655960e1fbde45b305bfb07b919dd9",
+            "extract_dir": "x64"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\TFTPServer.ini\") -and !(Test-Path \"$dir\\TFTPServer.ini\")) { New-Item \"$dir\\TFTPServer.ini\" -ItemType File | Out-Null }"
+    ],
+    "post_install": [
+        "$persist = persistdir $app $global",
+        "$tftpserverconf = \"$persist\\TFTPServer.ini\"",
+        "if (!(Test-Path $tftpserverconf) -or (Get-Item $tftpserverconf).Length -eq 0) { [IO.File]::WriteAllText($tftpserverconf, \"[Logging]`r`nLogFilePath = $persist\\TFTPServer.log`r`n\") }"
+    ],
+    "persist": [
+        "TFTPServer.ini",
+    ],
+    "bin": "TFtpServerGUI.exe",
+    "shortcuts": [
+        [
+            "TFtpServerGUI.exe",
+            "TFtpServerGUI"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.softperfect.com/products/toolkit/tftpserver/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.softperfect.com/download/freeware/tftpserver_windows_portable.zip",
+                "extract_dir": "x64"
+            }
+        }
+    }
+}
