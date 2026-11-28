@@ -1,0 +1,37 @@
+{
+    "version": "26.10",
+    "description": "SoftPerfect Ping Monitor is a free desktop application that continuously monitors network hosts via ICMP ping",
+    "homepage": "https://www.softperfect.com/products/toolkit/pingmonitor/",
+    "license": "freesoftware",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.softperfect.com/download/freeware/pingmonitor_windows_portable.zip",
+            "hash": "5ba7d82dd492350baf9c809f58052e9a513342b1d60efc31c42979236d380732",
+            "extract_dir": "x64"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\PingMonitor.db\") -and !(Test-Path \"$dir\\PingMonitor.db\")) { New-Item \"$dir\\PingMonitor.db\" -ItemType File | Out-Null }"
+    ],
+    "persist": [
+        "PingMonitor.db",
+    ],
+    "bin": "PingMonitor.exe",
+    "shortcuts": [
+        [
+            "PingMonitor.exe",
+            "PingMonitor"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.softperfect.com/products/toolkit/pingmonitor/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.softperfect.com/download/freeware/pingmonitor_windows_portable.zip",
+                "extract_dir": "x64"
+            }
+        }
+    }
+}
