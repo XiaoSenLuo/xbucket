@@ -1,12 +1,12 @@
 {
-    "version": "2.2.3",
+    "version": "2.4.5",
     "description": "A Sophisticated CSV Editor/Viewer for Windows, Mac, and Linux",
     "homepage": "https://www.moderncsv.com/",
     "license": "freesoftware",
     "architecture": {
         "64bit": {
-            "url": "https://www.moderncsv.com/release/ModernCSV-Win-v2.2.3.zip",
-            "hash": "7f560a4bdc953f9c9725210a84e4acc4e7bdf9450e7fa916e084631d01219593"
+            "url": "https://www.moderncsv.com/release/ModernCSV-Win-v2.4.5.zip",
+            "hash": "2b1d2116f55b23b1abdafadb7126b186ad7a9f3046430786c0c7ecfecfb7edb8"
         }
     },
     "extract_dir": "Modern CSV",
